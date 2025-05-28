@@ -1,23 +1,29 @@
 .wrap {
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
   width: 100%;
-  height: 10%;
-  z-index: 10;
-  background-image: linear-gradient(180deg, rgba(66, 65, 65, 0.8), transparent);
+  height: 70px;
+  z-index: 100;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 10px 15px;
+  padding: 0 2rem;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 
-  a {
-    img {
-      max-width: 150px;
-      max-height: 150px;
+  .logo-container {
+    h1 {
+      font-family: 'Playfair Display', serif;
+      color: var(--primary-color);
+      margin: 0;
+      font-size: 1.8rem;
+      font-weight: 700;
     }
-    @media (max-width: 768px) {
-      padding: 0 5px;
+
+    a {
+      text-decoration: none;
     }
   }
 
@@ -26,110 +32,82 @@
     gap: 2rem;
     
     a {
-      color: white;
+      color: var(--text-color);
       text-decoration: none;
       font-size: 1.1rem;
-      padding: 0.5rem 1rem;
-      border-radius: 20px;
+      padding: 0.5rem 1.5rem;
+      border-radius: 25px;
       transition: all 0.3s ease;
+      font-weight: 500;
 
       &:hover {
-        background: rgba(255, 255, 255, 0.1);
+        background: var(--secondary-color);
+        color: white;
       }
 
       &.active {
-        background: rgba(255, 255, 255, 0.2);
+        background: var(--primary-color);
+        color: white;
       }
     }
   }
 
   .nav-menu {
     display: flex;
-    flex: 1;
-    justify-content: flex-end;
     align-items: center;
-    margin: 0 5px;
+    gap: 1.5rem;
 
     .theme-selector {
-      background: rgba(255, 255, 255, 0.1);
+      background: var(--secondary-color);
       color: white;
       border: none;
-      padding: 0.5rem;
-      border-radius: 20px;
-      margin-right: 1rem;
+      padding: 0.5rem 1rem;
+      border-radius: 25px;
       cursor: pointer;
+      font-size: 0.9rem;
+      transition: all 0.3s ease;
+
+      &:hover {
+        background: var(--primary-color);
+      }
 
       option {
-        background: #2c3e50;
+        background: var(--background);
+        color: var(--text-color);
+      }
+    }
+
+    .fullscreen-btn {
+      background: transparent;
+      border: none;
+      color: var(--text-color);
+      cursor: pointer;
+      padding: 0.5rem;
+      border-radius: 50%;
+      transition: all 0.3s ease;
+
+      &:hover {
+        background: var(--secondary-color);
         color: white;
       }
     }
-
-    a {
-      display: flex;
-      align-items: center;
-      padding: 0 20px;
-      cursor: pointer;
-      text-decoration: none;
-      color: white;
-
-      img {
-        width: 35px;
-        height: 35px;
-        border-radius: 50%;
-      }
-
-      span {
-        font-size: 13px;
-        letter-spacing: 1.4px;
-        position: relative;
-        padding: 0 8px;
-
-        &:after {
-          content: '';
-          height: 2px;
-          background: white;
-          position: absolute;
-          left: 0;
-          right: 0;
-          bottom: -6px;
-          opacity: 0;
-          transform-origin: left center;
-          transition: all 250ms cubic-bezier(0.25, 0.46, 0.45, 0.94) 0s;
-          transform: scaleX(0);
-        }
-      }
-      &:hover {
-        span:after {
-          transform: scaleX(1);
-          opacity: 1;
-        }
-      }
-    }
-  }
-}
-
-.fullscreen-btn {
-  background-color: transparent;
-  border: none;
-  color: white;
-
-  @media screen and (max-width: 1024px) {
-    display: none;
   }
 }
 
 @media (max-width: 768px) {
   .wrap {
-    flex-direction: column;
-    height: auto;
     padding: 1rem;
+    height: auto;
+    flex-direction: column;
+    gap: 1rem;
 
     .nav-links {
-      margin: 1rem 0;
+      width: 100%;
+      justify-content: center;
     }
 
     .nav-menu {
+      width: 100%;
       justify-content: center;
     }
   }

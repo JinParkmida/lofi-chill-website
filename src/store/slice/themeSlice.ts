@@ -3,20 +3,20 @@ import { ITheme } from '../../types/interface';
 
 const cherryBlossomTheme: ITheme = {
   name: 'cherryBlossom',
-  background: 'linear-gradient(to right, #ffd1dc, #fff0f5)',
-  primaryColor: '#ff69b4',
-  secondaryColor: '#ffb6c1',
-  textColor: '#4a4a4a',
-  accentColor: '#ff1493'
+  background: 'linear-gradient(135deg, #fce4ec 0%, #f8bbd0 100%)',
+  primaryColor: '#e91e63',
+  secondaryColor: '#f06292',
+  textColor: '#2c3e50',
+  accentColor: '#ad1457'
 };
 
 const rainySoulTheme: ITheme = {
   name: 'rainySoul',
-  background: 'linear-gradient(to right, #2c3e50, #3498db)',
-  primaryColor: '#34495e',
-  secondaryColor: '#95a5a6',
-  textColor: '#ecf0f1',
-  accentColor: '#3498db'
+  background: 'linear-gradient(135deg, #cfd9df 0%, #e2ebf0 100%)',
+  primaryColor: '#546e7a',
+  secondaryColor: '#78909c',
+  textColor: '#263238',
+  accentColor: '#37474f'
 };
 
 const initialState = {

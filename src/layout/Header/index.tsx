@@ -5,7 +5,6 @@ import { setTheme } from "../../store/slice/themeSlice";
 import "./styles.scss";
 import { Link, useLocation } from "react-router-dom";
 import DarkLightSwitch from "../../components/DarkLightSwitch";
-import { CONSTANTS } from "../../constants/constants";
 import { RootState } from "../../store/store";
 
 const Header = () => {
@@ -32,15 +31,17 @@ const Header = () => {
 
   return (
     <nav className="wrap">
-      <Link to="/">
-        <img src="/assets/icons/lofi-logo.gif" alt="" />
-      </Link>
+      <div className="logo-container">
+        <Link to="/">
+          <h1>K-Beauty</h1>
+        </Link>
+      </div>
       <div className="nav-links">
         <Link to="/skincare" className={location.pathname === "/skincare" ? "active" : ""}>
-          Skincare Tracker
+          Skincare
         </Link>
         <Link to="/journal" className={location.pathname === "/journal" ? "active" : ""}>
-          Mood Journal
+          Journal
         </Link>
       </div>
       <div className="nav-menu">
@@ -59,10 +60,6 @@ const Header = () => {
             </option>
           ))}
         </select>
-        <a target="_blank" rel="noreferrer" href={CONSTANTS.AUTHOR_GITHUB_LINK}>
-          <i className="fab fa-github"></i>
-          <span>GitHub</span>
-        </a>
         <div onClick={daynightHandler}>
           <DarkLightSwitch theme={mode} />
         </div>
