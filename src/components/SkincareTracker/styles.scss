@@ -1,0 +1,46 @@
+.skincare-tracker {
+  max-width: 600px;
+  margin: 2rem auto;
+  padding: 2rem;
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 15px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+
+  h2 {
+    text-align: center;
+    margin-bottom: 2rem;
+    color: var(--primary-color);
+  }
+
+  .skincare-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+
+    .MuiTextField-root,
+    .MuiFormControl-root {
+      background: white;
+      border-radius: 8px;
+    }
+
+    .MuiButton-root {
+      margin-top: 1rem;
+      padding: 1rem;
+      border-radius: 8px;
+      background: var(--accent-color);
+      transition: all 0.3s ease;
+
+      &:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      }
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .skincare-tracker {
+    margin: 1rem;
+    padding: 1rem;
+  }
+}
