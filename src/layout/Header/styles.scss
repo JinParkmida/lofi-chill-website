@@ -21,11 +21,49 @@
     }
   }
 
+  .nav-links {
+    display: flex;
+    gap: 2rem;
+    
+    a {
+      color: white;
+      text-decoration: none;
+      font-size: 1.1rem;
+      padding: 0.5rem 1rem;
+      border-radius: 20px;
+      transition: all 0.3s ease;
+
+      &:hover {
+        background: rgba(255, 255, 255, 0.1);
+      }
+
+      &.active {
+        background: rgba(255, 255, 255, 0.2);
+      }
+    }
+  }
+
   .nav-menu {
     display: flex;
     flex: 1;
     justify-content: flex-end;
+    align-items: center;
     margin: 0 5px;
+
+    .theme-selector {
+      background: rgba(255, 255, 255, 0.1);
+      color: white;
+      border: none;
+      padding: 0.5rem;
+      border-radius: 20px;
+      margin-right: 1rem;
+      cursor: pointer;
+
+      option {
+        background: #2c3e50;
+        color: white;
+      }
+    }
 
     a {
       display: flex;
@@ -48,7 +86,6 @@
         padding: 0 8px;
 
         &:after {
-          //make the hover effect on the navbar menu
           content: '';
           height: 2px;
           background: white;
@@ -63,7 +100,6 @@
         }
       }
       &:hover {
-        //make the hover effect on the navbar menu
         span:after {
           transform: scaleX(1);
           opacity: 1;
@@ -80,5 +116,21 @@
 
   @media screen and (max-width: 1024px) {
     display: none;
+  }
+}
+
+@media (max-width: 768px) {
+  .wrap {
+    flex-direction: column;
+    height: auto;
+    padding: 1rem;
+
+    .nav-links {
+      margin: 1rem 0;
+    }
+
+    .nav-menu {
+      justify-content: center;
+    }
   }
 }
