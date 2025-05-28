@@ -16,14 +16,14 @@ const skincareSlice = createSlice({
       localStorage.setItem('skincare-routines', JSON.stringify(state.routines));
     },
     updateRoutine: (state, action: PayloadAction<ISkinCareRoutine>) => {
-      const index = state.routines.findIndex(routine => routine.id === action.payload.id);
+      const index = state.routines.findIndex((routine: ISkinCareRoutine) => routine.id === action.payload.id);
       if (index !== -1) {
         state.routines[index] = action.payload;
         localStorage.setItem('skincare-routines', JSON.stringify(state.routines));
       }
     },
     deleteRoutine: (state, action: PayloadAction<string>) => {
-      state.routines = state.routines.filter(routine => routine.id !== action.payload);
+      state.routines = state.routines.filter((routine: ISkinCareRoutine) => routine.id !== action.payload);
       localStorage.setItem('skincare-routines', JSON.stringify(state.routines));
     }
   }
